@@ -1,0 +1,135 @@
+import 'package:flutter/material.dart';
+import 'package:stayhome/widgets/header_cover.dart';
+
+import 'home_screen.dart';
+
+
+class WelcomeScreen extends StatefulWidget {
+  @override
+  _WelcomeScreenState createState() => _WelcomeScreenState();
+}
+
+class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: Theme.of(context).primaryColor,
+      body: Column(
+        children: <Widget>[
+          HeaderCover(),
+          Expanded(
+            child: Container(
+              color: Colors.white,
+              child: Column(children: <Widget>[
+                Container(
+                  color: Theme.of(context).accentColor,
+                  height: 70,
+                  child: Column(
+                    children: <Widget>[
+                      Row(
+                        children: <Widget>[
+                          Container(),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+                Row(
+                  children: <Widget>[
+                    Expanded(
+                      flex: 6,
+                      child: Padding(
+                        padding:
+                            EdgeInsets.symmetric(vertical: 80, horizontal: 20),
+                        child: Container(
+                          child: Text(
+                              'Quarantine is not the reason to do nothing! We compiled a big list of home activities for you!',
+                              style: TextStyle(
+                                  fontSize: 17.0, color: Colors.black87)),
+                        ),
+                      ),
+                    ),
+                    Expanded(
+                        flex: 4,
+                        child: Container(
+                          height: 70,
+                          child: Row(
+                               crossAxisAlignment: CrossAxisAlignment.end,
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                             
+                              children: <Widget>[
+                                Container(
+                                  height: 5,
+                                  width: 50,
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.only(
+                                      topLeft: Radius.circular(30),
+                                      bottomLeft: Radius.circular(30),
+                                      topRight: Radius.circular(30),
+                                      bottomRight: Radius.circular(30),
+                                    ),
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                                Container(
+                                  height: 5,
+                                  width: 5,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                                Container(
+                                  height: 5,
+                                  width: 5,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                    color: Colors.black87,
+                                  ),
+                                ),
+                              ]),
+                        )),
+                  ],
+                ),
+                Row(children: <Widget>[
+                  Expanded(
+                    child: Padding(
+                      padding: EdgeInsets.all(20),
+                      child: GestureDetector(
+                          onTap: () {
+                              Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => HomeScreen()),
+                              ); 
+
+                          },
+                          child: Container(
+                            height: 64,
+                            child: Center(
+                                child: Text('Skip',
+                                    style: TextStyle(
+                                        fontSize: 25.0,
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.white))),
+                            decoration: BoxDecoration(
+                              color: Theme.of(context).accentColor,
+                              borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(30),
+                                bottomLeft: Radius.circular(30),
+                                topRight: Radius.circular(30),
+                                bottomRight: Radius.circular(30),
+                              ),
+                            ),
+                          )),
+                    ),
+                  ),
+                ]),
+              ]),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
