@@ -72,17 +72,23 @@ class _HomeScreenState extends State<HomeScreen> {
                                 padding: const EdgeInsets.all(20.0),
                                 child: Row(children: [
                                   Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
                                     children: <Widget>[
                                       Text(filter()[index].name,
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold,
                                               fontSize: 30)),
-                                      Text(filter()[index].description,
+                                      Text( filter()[index].schools.toString() + ' schools',
                                           style: TextStyle(
                                               color: Colors.white,
                                               fontWeight: FontWeight.bold,
                                               fontSize: 14)),
+                                       Text('> ' + filter()[index].courses.toString() + ' courses',
+                                          style: TextStyle(
+                                              color: Colors.white,
+                                              fontWeight: FontWeight.bold,
+                                              fontSize: 14)),       
                                     ],
                                   ),
                                 ]),

@@ -1,6 +1,6 @@
 # stayhome
 
-Flutter example project, translating UX to Flutter.
+Flutter mobile app example.
 
 ## Credit
 UX design by Andrey Bogdanov (https://dribbble.com/shots/10873373-Stay-Home)
